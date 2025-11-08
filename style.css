@@ -1,0 +1,397 @@
+/* === GLOBAL === */
+:root {
+  --bg-light: #FCFBF6;
+  --text-main: #5E3A3E;
+  --primary: #FDBB0A;
+  --secondary: #7A8462;
+  --neutral: #EDE7DA;
+  --radius: 14px;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+ === BASE & MOBILE STYLES ===
+ (These apply to all screen sizes)
+============================================
+*/
+
+/* === CONTAINER === */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* === HEADER === */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(252, 251, 246, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--neutral);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: none; /* Mobile-first: hidden by default */
+  list-style: none;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+/* === HERO === */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 0 1rem;
+  background-image: url('bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/*
+ * HERO ALIGNMENT FIX:
+ * Position the canvas and overlay absolutely to
+ * take them out of the flexbox layout flow.
+*/
+#particles,
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#particles {
+  z-index: 0;
+}
+
+.overlay {
+  z-index: 1;
+  /* You can add a background tint here if you want */
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Sits on top of canvas/overlay */
+  max-width: 700px;
+  padding-top: 70px; /* avoid header overlap */
+}
+
+.hero-content h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  /* Color changed to white for readability on image */
+  color: #FFFFFF; 
+  word-break: break-word;
+}
+
+.hero-content h2 span {
+  color: var(--primary);
+}
+
+.hero-content p {
+  font-size: 1rem;
+  /* Color changed to light for readability on image */
+  color: #F0F0F0;
+  margin-bottom: 1.8rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  background: var(--primary);
+  color: var(--text-main);
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(253, 187, 10, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* === SECTIONS === */
+.section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* === GRID LAYOUT (Mobile: 1 column) === */
+.grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.img-card img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 2px solid var(--neutral);
+  box-shadow: 0 3px 10px rgba(122, 132, 98, 0.2);
+}
+
+/* === TECHNOLOGY (Mobile: 1 column) === */
+.section.dark {
+  background: var(--neutral);
+  color: var(--text-main);
+}
+
+.tech-grid {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.tech-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid var(--neutral);
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 16px rgba(122, 132, 98, 0.2);
+}
+
+.tech-card h3 {
+  color: var(--secondary);
+  margin-bottom: 0.6rem;
+}
+
+/* === HERB PACKAGING (Mobile: 1 column) === */
+#packaging {
+  background: #fdfbf4;
+}
+
+#packaging h3 {
+  color: var(--secondary);
+  margin-top: 1rem;
+}
+
+.features {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.features li {
+  margin-bottom: 0.7rem;
+  color: var(--text-main);
+}
+
+.img-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.img-gallery img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 2px solid var(--neutral);
+  transition: transform 0.3s ease;
+}
+
+.img-gallery img:hover {
+  transform: scale(1.04);
+}
+
+/* === IMPACT SECTION (Mobile: 1 column) === */
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.impact-card {
+  background: #fff;
+  border: 1px solid var(--neutral);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.impact-card:hover {
+  box-shadow: 0 5px 14px rgba(122, 132, 98, 0.2);
+}
+
+.impact-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+/* === CONTACT === */
+#contact {
+  background: var(--neutral);
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.contact-info {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-info a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info a:hover {
+  color: var(--primary);
+}
+
+/* === FOOTER === */
+.footer {
+  background: #faf7ed;
+  color: var(--text-main);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--neutral);
+}
+
+
+/* ============================================
+ === TABLET (Progressive Enhancement) ===
+ (min-width: 600px)
+============================================
+*/
+@media (min-width: 600px) {
+  .hero-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .img-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+ === DESKTOP (Progressive Enhancement) ===
+ (min-width: 900px)
+============================================
+*/
+@media (min-width: 900px) {
+  .nav-links {
+    display: flex; /* Show nav links on desktop */
+  }
+
+  .hero-content h2 {
+    font-size: 3rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .img-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
