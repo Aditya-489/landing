@@ -92,7 +92,7 @@ body {
   text-align: center;
   min-height: 100vh;
   padding: 0 1rem;
-  background-image: url('bg.webp');
+  background-image: url('images/bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
