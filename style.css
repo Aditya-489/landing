@@ -56,37 +56,39 @@ body {
   height: 70px;
 }
 
+/* === HEADER LOGO STYLES === */
+
 .logo {
-  /* Keep existing gradient styles for the main title */
+  /* 1. Keep the main font styles */
   font-weight: 700;
   font-size: 1.6rem;
+  
+  /* 2. This creates the gradient on the main text "Botanie Bags" */
   background: linear-gradient(90deg, var(--secondary), var(--primary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5px;
 
-  /* Layout for stacking the tagline */
+  /* 3. IMPORTANT: This stacks the text vertically */
   display: flex;
-  flex-direction: column;
-  line-height: 1;
+  flex-direction: column; 
+  line-height: 1.1;
 }
 
 .tagline {
-  /* Typography */
-  font-size: 0.45em;       /* Scales relative to the 1.6rem logo */
-  font-weight: 600;        /* Bold, readable weight */
+  /* 4. Make it smaller and readable */
+  font-size: 0.45em;       /* Much smaller than the main logo */
+  font-weight: 600;        /* Bold for readability */
   font-family: "Poppins", sans-serif;
-  letter-spacing: 0.5px;   /* Slight spacing for clarity */
-  margin-top: 2px;         /* Space between title and tagline */
+  letter-spacing: 0.5px;
+  margin-top: 0px;         /* Tucks it right under the main text */
   
-  /* OVERRIDE PARENT GRADIENT (Crucial for readability) */
-  background: none;        /* Removes gradient background */
-  color: var(--text-main); /* Sets solid dark color (#5E3A3E) */
-  -webkit-text-fill-color: var(--text-main); /* Fills the text solid */
-  opacity: 1;              /* Ensures full visibility */
+  /* 5. CRITICAL: Override the gradient so it is solid dark text */
+  background: none;        
+  -webkit-text-fill-color: var(--text-main); /* Forces solid color */
+  color: var(--text-main); 
 }
-
 .nav-links {
   display: none; /* Mobile-first: hidden by default */
   list-style: none;
