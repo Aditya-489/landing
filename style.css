@@ -57,6 +57,7 @@ body {
 }
 
 .logo {
+  /* Keep existing gradient styles for the main title */
   font-weight: 700;
   font-size: 1.6rem;
   background: linear-gradient(90deg, var(--secondary), var(--primary));
@@ -64,6 +65,26 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5px;
+
+  /* Layout for stacking the tagline */
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.tagline {
+  /* Typography */
+  font-size: 0.45em;       /* Scales relative to the 1.6rem logo */
+  font-weight: 600;        /* Bold, readable weight */
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;   /* Slight spacing for clarity */
+  margin-top: 2px;         /* Space between title and tagline */
+  
+  /* OVERRIDE PARENT GRADIENT (Crucial for readability) */
+  background: none;        /* Removes gradient background */
+  color: var(--text-main); /* Sets solid dark color (#5E3A3E) */
+  -webkit-text-fill-color: var(--text-main); /* Fills the text solid */
+  opacity: 1;              /* Ensures full visibility */
 }
 
 .nav-links {
