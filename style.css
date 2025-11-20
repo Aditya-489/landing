@@ -393,6 +393,47 @@ body {
  (min-width: 900px)
 ============================================
 */
+
+/* === PRE-ORDER CTA SECTION === */
+.cta-section {
+  /* Uses your secondary green variable but makes it a solid background for impact */
+  background: linear-gradient(135deg, var(--secondary), #6b7456);
+  color: #fff;
+}
+
+.cta-section h2 {
+  /* Overrides the default gradient text so it is readable on green */
+  background: none;
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  color: #f1f1f1; /* Lighter text for better contrast on green */
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* A specific button style just for this section to pop against the green */
+.btn-cta {
+  background: #ffffff;
+  color: var(--secondary);
+  font-size: 1.1rem;
+  padding: 1rem 2.2rem; /* Slightly larger than standard buttons */
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta:hover {
+  background: var(--primary);
+  color: var(--text-main);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
 @media (min-width: 900px) {
   .nav-links {
     display: flex; /* Show nav links on desktop */
